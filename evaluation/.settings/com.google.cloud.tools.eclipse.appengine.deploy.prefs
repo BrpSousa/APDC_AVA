@@ -1,0 +1,9 @@
+account.email=br.sousa@campus.fct.unl.pt
+eclipse.preferences.version=1
+include.optional.configuration.files=true
+project.allowObsoleteRuntime=false
+project.bucket=
+project.id=apdc-evaluation
+project.previousVersion.stop=true
+project.promote=true
+project.version=17

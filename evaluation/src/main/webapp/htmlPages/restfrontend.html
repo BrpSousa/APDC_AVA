@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script type="text/javascript"> src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript"> src="js/jquery.jsonify-0.3.1.min.js"></script>
+<script type="text/javascript"> src="js/restfrontend.js"></script>
+<!--
+
+//-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Title of document</title>
+</head>
+
+<body>
+<section class="loginform cf">
+  <form name="login" action="https://apdc-evaluation.appspot.com/rest/login/v2" method="post" accept-charset="utf-8">
+  	<ui>
+  		<li><label for="Username">Utilizador</label>
+		<input type="text" id="user" name="username" placeholder="utilizador" required></input></li>
+		<li><label for="Username">Password</label>
+		<input type="password" id="pass" name="password" placeholder="password" required></input></li>
+		</li>
+		<input type="submit" value="login">
+	</ui>
+</form>
+</section>
+<script>
+	window.addEventListener("load", function() {
+	captureData();
+	var username = document.getElementById("user").value;
+	var password = document.getElementById("pass").value;
+	var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function(){
+			console.log(this)
+				if(this.readyState == 4 && this.status == 200){
+					alert( this.responseText);
+				}
+		};
+		// xhttp.open(method,url,async)
+		xhttp.open("POST", "https://apdc-evaluation.appspot.com/rest/login/v2", true);
+		xhttp.setRequestHeader("Content-type","application/json");
+		xhttp.send('{"username":"Test9","password":"Test9"}');
+	});
+</script>
+</body>
+
+
+</html>
